@@ -14,7 +14,7 @@ public class SwaggerConfiguration {
 	  @Bean
 	    public OpenAPI configurarSwagger() {
 	        return new OpenAPI().info(new Info()
-	            .title("LugiaTracker")
+	            .title("LugiaWeather")
 	            .description("Este projeto visa gerenciar as relações e funcionalidades entre os elementos "
 	                       + "criação de usuario em uma aplicação de alto nível de maturidade, "
 	                       + "utilizando recursos do framework Spring Boot.")

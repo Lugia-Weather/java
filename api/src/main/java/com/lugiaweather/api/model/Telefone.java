@@ -2,66 +2,103 @@ package com.lugiaweather.api.model;
 
 import org.springframework.hateoas.RepresentationModel;
 
-import jakarta.persistence.Embeddable;
 
-@Embeddable
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="TBL_TELEFONE")
 public class Telefone extends RepresentationModel<Telefone>{
 
-	private Integer id_telefone;
-	private Integer ddd;
-	private String telefone;
-	
+    @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_telefone;
+    private String ddd;
+    private String numero;
 	
 	
 
 	
 	
-	public Telefone(Integer id_telefone, Integer ddd, String telefone) {
+	public Telefone(Long id_telefone, String ddd, String numero) {
 		super();
 		this.id_telefone = id_telefone;
 		this.ddd = ddd;
-		this.telefone = telefone;
-	}
-	
-	
-	
-	public Telefone() {
-		super();
+		this.numero = numero;
 	}
 
 
 
-	public Integer getDdd() {
-		return ddd;
-	}
-	public void setDdd(Integer ddd) {
-		this.ddd = ddd;
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-	public Integer getId_telefone() {
+
+
+	public Long getId_telefone() {
 		return id_telefone;
 	}
-	public void setId_telefone(Integer id_telefone) {
+
+
+
+
+
+	public void setId_telefone(Long id_telefone) {
 		this.id_telefone = id_telefone;
 	}
 
-	
-	
-	
-	
+
+
+
+
+	public String getDdd() {
+		return ddd;
+	}
+
+
+
+
+
+	public void setDdd(String ddd) {
+		this.ddd = ddd;
+	}
+
+
+
+
+
+	public String getNumero() {
+		return numero;
+	}
+
+
+
+
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+
+
+
 
 	@Override
 	public String toString() {
-		return "Telefone [id_telefone=" + id_telefone + ", ddd=" + ddd + ", telefone=" + telefone + "]";
+		return "Telefone [id_telefone=" + id_telefone + ", ddd=" + ddd + ", numero=" + numero + "]";
+	}
+
+
+
+
+
+
+
+	public Telefone() {
+		super();
 	}
 	
 	
-	
+
 	
 	
 	

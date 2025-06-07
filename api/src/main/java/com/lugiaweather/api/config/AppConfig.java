@@ -9,6 +9,7 @@ public class AppConfig {
 
     @Bean
     public RestTemplate restTemplate() {
+    	  DotEnvConfig.loadEnv();
         return new RestTemplate();
     }
 }

@@ -23,7 +23,8 @@ public class User extends RepresentationModel<User>  {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+
+	private Long id_usuario;
 	
 	
 	
@@ -42,7 +43,7 @@ public class User extends RepresentationModel<User>  {
 	
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id_telefone", referencedColumnName = "id")
+	@JoinColumn(name = "id_telefone")
 	private Telefone telefone;
 	
 	
@@ -70,53 +71,30 @@ public class User extends RepresentationModel<User>  {
 	
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "endereco_id", referencedColumnName = "id")
+	@JoinColumn(name = "id_endereco")
 	private Endereco endereco;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public User(Integer id,String nome, Telefone telefone, String email, String senha, Endereco endereco) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.telefone = telefone;
-		this.email = email;
-		this.senha = senha;
-		this.endereco = endereco;
-	}
 
-	
 
-	public User() {
-		super();
-	}
 
 	
 	
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", nome=" + nome + ", telefone=" + telefone +", email=" + email
-				+ ", senha=" + senha + ", endereco=" + endereco + "]";
+	
+	
+	
+	
+	
+
+	public Long getId_usuario() {
+		return id_usuario;
 	}
 
 
 
-	public Integer getId() {
-		return id;
+
+	public void setId_usuario(Long id_usuario) {
+		this.id_usuario = id_usuario;
 	}
 
-
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 
 
@@ -126,9 +104,11 @@ public class User extends RepresentationModel<User>  {
 
 
 
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 
 
 
@@ -138,9 +118,11 @@ public class User extends RepresentationModel<User>  {
 
 
 
+
 	public void setTelefone(Telefone telefone) {
 		this.telefone = telefone;
 	}
+
 
 
 
@@ -150,9 +132,11 @@ public class User extends RepresentationModel<User>  {
 
 
 
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 
 
 
@@ -162,9 +146,11 @@ public class User extends RepresentationModel<User>  {
 
 
 
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 
 
 
@@ -174,12 +160,27 @@ public class User extends RepresentationModel<User>  {
 
 
 
+
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 
 
 
+
+	@Override
+	public String toString() {
+		return "User [id_usuario=" + id_usuario + ", nome=" + nome + ", telefone=" + telefone + ", email=" + email
+				+ ", senha=" + senha + ", endereco=" + endereco + "]";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 	

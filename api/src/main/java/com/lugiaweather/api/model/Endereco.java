@@ -3,6 +3,8 @@ package com.lugiaweather.api.model;
 import org.springframework.hateoas.RepresentationModel;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,7 +15,8 @@ import jakarta.persistence.Table;
 public class Endereco extends RepresentationModel<Endereco> {
 	
 		@Id
-		private Integer endereco_id;
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Long id_endereco;
 	  	private String cep;
 	    private String logradouro;
 	    private String complemento;
@@ -24,13 +27,11 @@ public class Endereco extends RepresentationModel<Endereco> {
 	    
 	    
 	    
-	    
-	    
-		public Integer getEndereco_id() {
-			return endereco_id;
+		public Long getId_endereco() {
+			return id_endereco;
 		}
-		public void setEndereco_id(Integer endereco_id) {
-			this.endereco_id = endereco_id;
+		public void setId_endereco(Long id_endereco) {
+			this.id_endereco = id_endereco;
 		}
 		public String getCep() {
 			return cep;
@@ -67,7 +68,14 @@ public class Endereco extends RepresentationModel<Endereco> {
 		}
 		public void setUf(String uf) {
 			this.uf = uf;
-		}         
+		}
+	    
+	    
+	    
+	    
+	    
+	    
+	
 	
 	}
 	

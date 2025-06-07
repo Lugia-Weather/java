@@ -24,7 +24,7 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginDTO loginDTO) {
         try {
-            var authToken = new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getSenha());
+        	UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getSenha());
             authenticationManager.authenticate(authToken);
 
             String token = jwtUtil.gerarToken(loginDTO.getEmail());

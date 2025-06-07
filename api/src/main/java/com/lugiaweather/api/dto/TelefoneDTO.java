@@ -9,17 +9,17 @@ public class TelefoneDTO {
 	private Integer id_telefone;
 	
 	@NotNull(message = "O DDD é obrigatório")
-	private Integer ddd;
+	private String ddd;
 	
 	@Pattern(regexp = "\\d{9}", message = "O telefone deve conter 9 dígitos numéricos")
-	private String telefone;
+	private String numero;
 	
 	
-	public TelefoneDTO(Integer id_telefone,Integer ddd, String telefone) {
+	public TelefoneDTO(Integer id_telefone,String ddd, String numero) {
 		super();
 		this.id_telefone= id_telefone;
 		this.ddd = ddd;
-		this.telefone = telefone;
+		this.numero = numero;
 	}
 	
 	public TelefoneDTO() {
@@ -27,17 +27,17 @@ public class TelefoneDTO {
 	}
 	
 	
-	public Integer getDdd() {
+	public String getDdd() {
 		return ddd;
 	}
-	public void setDdd(Integer ddd) {
+	public void setDdd(String ddd) {
 		this.ddd = ddd;
 	}
 	public String getTelefone() {
-		return telefone;
+		return numero;
 	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setTelefone(String numero) {
+		this.numero = numero;
 	}
 	
 	public Integer getId_telefone() {
@@ -50,7 +50,7 @@ public class TelefoneDTO {
 
 	@Override
 	public String toString() {
-		return "TelefoneDTO [id_telefone=" + id_telefone + ", ddd=" + ddd + ", telefone=" + telefone + "]";
+		return "TelefoneDTO [id_telefone=" + id_telefone + ", ddd=" + ddd + ", telefone=" + numero + "]";
 	}
 
 	

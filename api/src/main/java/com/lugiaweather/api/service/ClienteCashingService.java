@@ -26,7 +26,7 @@ public class ClienteCashingService {
 	}
 	
 	@Cacheable(value = "BuscaPorId", key= "#id_gerente")
-	public Optional<User> findById(Integer id){
+	public Optional<User> findById(Long id){
 		return repU.findById(id);
 	}
 	
