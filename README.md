@@ -191,7 +191,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ---
 **Erik** - [GitHub](https://github.com/ozerikoz)
 ---
-**Nathan** -[GitHub] (https://github.com/NathanMagno)
+**Nathan** - [GitHub](https://github.com/NathanMagno)
 ---
 
 ⭐ Se este projeto te ajudou, deixe uma estrela!
