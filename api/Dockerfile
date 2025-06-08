@@ -3,11 +3,12 @@ FROM eclipse-temurin:17-jdk-alpine AS build
 
 WORKDIR /app
 
-# Copia os arquivos de build
-COPY pom.xml . 
+# Copia o Maven Wrapper e arquivos necessários para o build
+COPY .mvn/ .mvn/
+COPY mvnw .
+COPY pom.xml .
 COPY src ./src
 
-COPY mvnw .
 RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
@@ -22,10 +23,7 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 # Usa esse usuário para rodar a aplicação
 USER appuser
 
-# Define variáveis de ambiente 
-ENV SPRING_DATASOURCE_URL=jdbc:oracle:thin:@oracle-db:1521:XE
-ENV SPRING_DATASOURCE_USERNAME=system
-ENV SPRING_DATASOURCE_PASSWORD=oracle123
+
 
 # Copia o jar construído do estágio anterior
 COPY --from=build /app/target/*.jar app.jar

@@ -73,6 +73,12 @@ public class UserDTO extends RepresentationModel<User> {
 
 
 	public UserDTO(User i) {
+	    this.id = i.getId_usuario();
+	    this.nome = i.getNome();
+	    this.telefone = i.getTelefone();
+	    this.email = i.getEmail();
+	    this.senha = i.getSenha();
+	    this.endereco = i.getEndereco();
 	}
 
 
