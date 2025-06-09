@@ -23,6 +23,8 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 # Usa esse usuário para rodar a aplicação
 USER appuser
 
+# Exemplo de variável de ambiente
+ENV SPRING_PROFILES_ACTIVE=prod
 
 
 # Copia o jar construído do estágio anterior
